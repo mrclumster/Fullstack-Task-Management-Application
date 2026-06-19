@@ -4,8 +4,7 @@ This is a fullstack task management application built for the Mayan Solutions In
 
 ---
 
-## 📋 Practical Exam Instructions
-**Objective:**
+## 📋 Objective
 Build a Fullstack Task Management Application that allows users to create, manage, and search tasks. The goal of this assessment is to evaluate understanding of Fullstack Development including Frontend development, Backend development, Database design and data persistence.
 
 **Core Features Required:**
