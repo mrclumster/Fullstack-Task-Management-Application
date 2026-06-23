@@ -4,6 +4,17 @@ const TaskItem = ({ task, onToggleComplete, onDelete, onEdit }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(task.title);
   const [editDescription, setEditDescription] = useState(task.description);
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString(undefined, { 
+      month: 'short', 
+      day: 'numeric', 
+      hour: '2-digit', 
+      minute: '2-digit' 
+    });
+  };
+
   
   const titleInputRef = useRef(null);
 
@@ -55,6 +66,11 @@ const TaskItem = ({ task, onToggleComplete, onDelete, onEdit }) => {
             <>
               <h3>{task.title}</h3>
               {task.description && <p>{task.description}</p>}
+              {task.createdAt && (
+                <span className="task-date-badge">
+                  📅 {formatDate(task.createdAt)}
+                </span>
+              )}
             </>
           )}
         </div>
